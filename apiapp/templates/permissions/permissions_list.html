@@ -1,0 +1,15 @@
+{% block content %}
+<h2>Permisos</h2>
+<ul>
+  {% for permission in permissions %}
+  <li>
+    <a href="{% url 'permission_detail' permission.pk %}"
+      >{{ permission.name_permissions }}</a
+    >
+  </li>
+  {% empty %}
+  <li>No hay permission registrados</li>
+  {% endfor %}
+  <a href="{% url 'permissions_create' %}">Nuevo permission</a>
+  {% endblock %}
+</ul>

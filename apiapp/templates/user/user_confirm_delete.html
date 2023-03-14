@@ -1,0 +1,10 @@
+{% block content %}
+<h1>Eliminar usuario</h1>
+<p>¿Está seguro de que desea eliminar este usuario?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="Eliminar" />
+  <a href="{% url 'user_detail' pk=object.pk %}">Cancelar</a>
+</form>
+{% endblock %}

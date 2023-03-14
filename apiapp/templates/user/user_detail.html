@@ -1,0 +1,9 @@
+{% block content %}
+<h1>{{ user }}</h1>
+
+<p><strong>Nombre:</strong> {{ user.name }}</p>
+<p><strong>Password:</strong> {{ user.password }}</p>
+
+<a href="{% url 'user_update' user.pk %}">Editar user</a>
+<a href="{% url 'user_delete' user.pk %}">Eliminar usuario</a>
+{% endblock %}

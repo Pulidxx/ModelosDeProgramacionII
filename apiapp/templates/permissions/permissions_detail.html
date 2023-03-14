@@ -1,0 +1,14 @@
+{% block content %}
+<h1>{{ permissions }}</h1>
+
+<p><strong>name_permissions:</strong> {{ permissions.name_permissions }}</p>
+<p><strong>user:</strong></p>
+<ul>
+  {% for user in permissions.user.filter %}
+  <li>{{ user }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'permissions_update' permissions.pk %}">Editar permissions</a>
+<a href="{% url 'permissions_delete' permissions.pk %}">Eliminar permissions</a>
+{% endblock %}

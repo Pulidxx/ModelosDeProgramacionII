@@ -1,0 +1,10 @@
+{% block content %}
+<h1>Eliminar el Rol</h1>
+<p>¿Está seguro de que desea eliminar este Rol?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="Eliminar" />
+  <a href="{% url 'rol_detail' pk=object.pk %}">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% block content %}
+<h2>Rol</h2>
+<ul>
+  {% for rol in rols %}
+  <li>
+    <a href="{% url 'rol_detail' rol.pk %}">{{ rol.name_rol }}</a>
+  </li>
+  {% empty %}
+  <li>No hay rol registrados</li>
+  {% endfor %}
+  <a href="{% url 'rol_create' %}">Nuevo Rol</a>
+  {% endblock %}
+</ul>

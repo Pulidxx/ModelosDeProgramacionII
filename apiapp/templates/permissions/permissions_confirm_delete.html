@@ -1,0 +1,10 @@
+{% block content %}
+<h1>Eliminar el Permiso</h1>
+<p>¿Está seguro de que desea eliminar este Permiso?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="Eliminar" />
+  <a href="{% url 'permissions_detail' pk=object.pk %}">Cancelar</a>
+</form>
+{% endblock %}

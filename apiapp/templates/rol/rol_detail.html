@@ -1,0 +1,14 @@
+{% block content %}
+<h1>{{ rol }}</h1>
+
+<p><strong>name_rol:</strong> {{ rol.name_rol }}</p>
+<p><strong>user:</strong></p>
+<ul>
+  {% for user in rol.user.filter %}
+  <li>{{ user }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'rol_update' rol.pk %}">Editar rol</a>
+<a href="{% url 'rol_delete' rol.pk %}">Eliminar Rol</a>
+{% endblock %}
